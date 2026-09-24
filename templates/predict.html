@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Predict - EV Battery Predictor{% endblock %}
+{% block content %}
+<section class="form-section">
+    <h2>Battery Health &amp; RUL Prediction</h2>
+    <form method="POST" action="{{ url_for('predict') }}" class="app-form predict-form">
+        <label for="battery_id">Battery ID</label>
+        <select id="battery_id" name="battery_id" required>
+            <option value="B5">B5</option>
+            <option value="B6">B6</option>
+            <option value="B7">B7</option>
+        </select>
+
+        <label for="cycle">Cycle Number</label>
+        <input type="number" step="any" id="cycle" name="cycle" required>
+
+        <label for="chI">Charge Current (chI)</label>
+        <input type="number" step="any" id="chI" name="chI" required>
+
+        <label for="chV">Charge Voltage (chV)</label>
+        <input type="number" step="any" id="chV" name="chV" required>
+
+        <label for="chT">Charge Temperature (chT)</label>
+        <input type="number" step="any" id="chT" name="chT" required>
+
+        <label for="disI">Discharge Current (disI)</label>
+        <input type="number" step="any" id="disI" name="disI" required>
+
+        <label for="disV">Discharge Voltage (disV)</label>
+        <input type="number" step="any" id="disV" name="disV" required>
+
+        <label for="disT">Discharge Temperature (disT)</label>
+        <input type="number" step="any" id="disT" name="disT" required>
+
+        <label for="BCt">Battery Capacity (BCt)</label>
+        <input type="number" step="any" id="BCt" name="BCt" required>
+
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+</section>
+{% endblock %}

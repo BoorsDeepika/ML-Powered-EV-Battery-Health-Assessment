@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Home - EV Battery Predictor{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>EV Battery State of Health &amp; Remaining Useful Life Predictor</h1>
+    <p>
+        Monitor your electric vehicle battery performance using machine learning.
+        Predict the State of Health (SOH) and Remaining Useful Life (RUL) of your
+        battery based on charge/discharge cycle data.
+    </p>
+    <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ url_for('user_login') }}">Login</a>
+        <a class="btn btn-secondary" href="{{ url_for('user_registration') }}">Register</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>📈 SOH Prediction</h3>
+        <p>Estimate the current State of Health of a battery from its cycle data.</p>
+    </div>
+    <div class="feature-card">
+        <h3>⏳ RUL Estimation</h3>
+        <p>Predict how many cycles remain before the battery reaches end-of-life.</p>
+    </div>
+    <div class="feature-card">
+        <h3>🔒 Secure Access</h3>
+        <p>Register and log in to access the prediction dashboard.</p>
+    </div>
+</section>
+{% endblock %}

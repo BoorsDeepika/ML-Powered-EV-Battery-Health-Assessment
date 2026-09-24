@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Prediction Result - EV Battery Predictor{% endblock %}
+{% block content %}
+<section class="result-section">
+    <h2>Prediction Result for Battery {{ battery_id }}</h2>
+
+    <div class="result-cards">
+        <div class="result-card soh-card">
+            <h3>State of Health (SOH)</h3>
+            <p class="result-value">{{ soh }}%</p>
+        </div>
+        <div class="result-card rul-card">
+            <h3>Remaining Useful Life (RUL)</h3>
+            <p class="result-value">{{ rul }} cycles</p>
+        </div>
+    </div>
+
+    <h3>Input Data Used</h3>
+    <table class="result-table">
+        <tr><th>Battery ID</th><td>{{ battery_id }}</td></tr>
+        <tr><th>Cycle</th><td>{{ cycle }}</td></tr>
+        <tr><th>Charge Current (chI)</th><td>{{ chI }}</td></tr>
+        <tr><th>Charge Voltage (chV)</th><td>{{ chV }}</td></tr>
+        <tr><th>Charge Temperature (chT)</th><td>{{ chT }}</td></tr>
+        <tr><th>Discharge Current (disI)</th><td>{{ disI }}</td></tr>
+        <tr><th>Discharge Voltage (disV)</th><td>{{ disV }}</td></tr>
+        <tr><th>Discharge Temperature (disT)</th><td>{{ disT }}</td></tr>
+        <tr><th>Battery Capacity (BCt)</th><td>{{ BCt }}</td></tr>
+    </table>
+
+    <a class="btn btn-secondary" href="{{ url_for('predict') }}">Predict Again</a>
+    <a class="btn btn-primary" href="{{ url_for('index') }}">Back to Dashboard</a>
+</section>
+{% endblock %}
